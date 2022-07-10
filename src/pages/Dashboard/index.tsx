@@ -7,7 +7,7 @@ import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import { FoodsContainer } from './styles';
 
-interface Food {
+interface IFood {
   id:number;
   name:string;
   description:string;
@@ -24,8 +24,8 @@ interface AddFood {
 }
 
 export default function Dashboard() {
-  const [foods, setFoods] = useState<Food[]>([]);
-  const [editingFood, setEditingFood] = useState<Food>({} as Food);
+  const [foods, setFoods] = useState<IFood[]>([]);
+  const [editingFood, setEditingFood] = useState<IFood>({} as IFood);
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
@@ -40,7 +40,7 @@ export default function Dashboard() {
 
   
   async function handleAddFood(
-    food: Omit<Food, 'id' | 'available'>,
+    food: Omit<IFood, 'id' | 'available'>,
   ): Promise<void> {
     try {
       const response = await api.post('/foods', {
@@ -87,7 +87,7 @@ export default function Dashboard() {
     setEditModalOpen(!editModalOpen);
   }
 
-  const handleEditFood = (food: Food) => {
+  const handleEditFood = (food: IFood) => {
     setEditModalOpen(true);
     setEditingFood(food);
   }
@@ -122,3 +122,4 @@ export default function Dashboard() {
   );
 
 }
+

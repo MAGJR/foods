@@ -1,16 +1,13 @@
 import styled, { css } from 'styled-components';
 
-
 interface ContainerProps {
-  available: boolean 
+  available:boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
   background: #f0f0f5;
   border-radius: 8px;
 
-
-  
   header {
     background: #ffb84d;
     border-radius: 8px 8px 0px 0px;

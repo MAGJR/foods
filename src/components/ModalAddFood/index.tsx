@@ -49,3 +49,4 @@ export default function ModalAddFood({isOpen, setIsOpen, handleAddFood}:ModalAdd
     </Modal>
   );
 }
+
